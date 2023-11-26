@@ -2,5 +2,5 @@
 
 public interface IGeometry
 {
-    public abstract double Area { get; }
+    public double Area { get; }
 }

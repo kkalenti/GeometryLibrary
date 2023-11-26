@@ -26,6 +26,21 @@ namespace GeometryLibrary.Tests
         }
 
         [Theory]
+        [InlineData(15, 13, 97.50)]
+        [InlineData(4, 3, 6)]
+        public void RightTriangle_ShouldCalculate_ValidArea(double a, double b, double expected)
+        {
+            // Arrange
+            IGeometry triangle = new Triangle(a, b);
+
+            // Act
+            var area = triangle.Area;
+
+            // Assert
+            Assert.Equal(expected, area, Precision);
+        }
+
+        [Theory]
         [InlineData(-1, 1, 1)]
         [InlineData(1, -1, 1)]
         [InlineData(1, 1, -1)]
@@ -37,7 +52,19 @@ namespace GeometryLibrary.Tests
             // Act-Assert
             Assert.Throws<ArgumentOutOfRangeException>(act);
         }
-        
+
+        [Theory]
+        [InlineData(-1, 1)]
+        [InlineData(1, -1)]
+        public void RightTriangle_ShouldThrowArgException_On_InvalidParamsRange(double a, double b)
+        {
+            // Arrange
+            var act = () => new Triangle(a, b);
+
+            // Act-Assert
+            Assert.Throws<ArgumentOutOfRangeException>(act);
+        }
+
         [Theory]
         [InlineData(100, 6, 2)]
         [InlineData(5, 100, 2)]
