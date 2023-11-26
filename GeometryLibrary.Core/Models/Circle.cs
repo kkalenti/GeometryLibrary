@@ -1,6 +1,6 @@
 ﻿namespace GeometryLibrary.Core.Models;
 
-public class Circle : GeometryBase
+public class Circle : IGeometry
 {
     private readonly double _radius;
 
@@ -12,5 +12,5 @@ public class Circle : GeometryBase
         _radius = radius;
     }
 
-    public override double Area => Math.PI * _radius * _radius;
+    public double Area => Math.PI * _radius * _radius;
 }

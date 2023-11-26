@@ -2,7 +2,7 @@
 
 namespace GeometryLibrary.Core.Models;
 
-public class Triangle : GeometryBase
+public class Triangle : IGeometry
 {
     private readonly double _a;
     private readonly double _b;
@@ -30,7 +30,7 @@ public class Triangle : GeometryBase
         _c = c;
     }
 
-    public override double Area
+    public double Area
     {
         get
         {

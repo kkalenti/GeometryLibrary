@@ -1,6 +1,6 @@
 ﻿namespace GeometryLibrary.Core.Models;
 
-public abstract class GeometryBase
+public interface IGeometry
 {
     public abstract double Area { get; }
 }

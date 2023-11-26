@@ -16,7 +16,7 @@ namespace GeometryLibrary.Tests
         public void Triangle_ShouldCalculate_ValidArea(double a, double b, double c, double expected)
         {
             // Arrange
-            GeometryBase triangle = new Triangle(a, b, c);
+            IGeometry triangle = new Triangle(a, b, c);
 
             // Act
             var area = triangle.Area;
@@ -57,7 +57,7 @@ namespace GeometryLibrary.Tests
         public void Circle_ShouldCalculate_ValidArea(double radius, double expected)
         {
             // Arrange
-            GeometryBase triangle = new Circle(radius);
+            IGeometry triangle = new Circle(radius);
 
             // Act
             var area = triangle.Area;
